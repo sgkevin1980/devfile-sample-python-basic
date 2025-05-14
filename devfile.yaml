@@ -1,4 +1,4 @@
-schemaVersion: 2.3.0
+schemaVersion: 2.2.0
 metadata:
   name: python
   projectType: Python
@@ -20,6 +20,7 @@ metadata:
 parent:
   id: python
   registryUrl: 'https://registry.devfile.io'
+  version: 2.1.0
 components:
   - name: image-build
     image:
@@ -37,9 +38,10 @@ components:
     kubernetes:
       uri: deploy.yaml
       endpoints:
-      - name: http-8081
-        targetPort: 8081
-        path: /
+        - name: http-8081
+          targetPort: 8081
+          path: /
+          secure: true
 commands:
   - id: build-image
     apply:
